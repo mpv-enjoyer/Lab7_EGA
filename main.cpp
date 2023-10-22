@@ -1,8 +1,6 @@
-#include <sstream>
 #include <iostream>
 #include <vector>
 using namespace std;
-
 int main()
 {
     int N; cout << "N > 0: "; cin >> N;
@@ -29,11 +27,7 @@ int main()
             if (S[j]) continue;
             if (cl < prices[j]) { cl = prices[j]; ci = j; }
         }
-        if (sumW + weight[ci] <= Wmax)
-        {
-            Q += cl; sumW += weight[ci]; S[ci] = true;
-        }
-        else break;
+        if (sumW + weight[ci] <= Wmax) { Q += cl; sumW += weight[ci]; S[ci] = true; } else break;
         cout << i + 1 << ") put:" << ci + 1 << " weight:" << weight[ci] << " price:" << prices[ci];
         cout << " backpack_price:" << Q << " backpack_weight:" << sumW << "\n";
     }
@@ -42,4 +36,3 @@ int main()
     cout << "\nprice: " << Q << "\nweight: " << sumW << "\n";
     return 0;
 }
-//challenge: c++ lab under 50 lines of code is done, it's so messy lol
